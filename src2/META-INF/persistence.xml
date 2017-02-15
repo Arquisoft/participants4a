@@ -6,9 +6,9 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">"jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11157627"</property>
-		<property name="hibernate.connection.username">sql11157627</property>
-		<property name="hibernate.connection.password">aGn41imG4w</property>
+		<property name="hibernate.connection.url">"jdbc:mysql://46.101.138.38:3306"</property>
+		<property name="hibernate.connection.username">aswuser</property>
+		<property name="hibernate.connection.password">temporal</property>
 		<property name="hibernate.connection.pool_size">10</property>
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>

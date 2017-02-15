@@ -34,7 +34,6 @@ public class FindUserAction implements Action {
 		String email = email;
 		String password = password;
 		Usuario user = new FindUser(email, password).execute();
-		println(email + " " + password);
 	}
 
 }
