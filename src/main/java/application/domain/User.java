@@ -1,4 +1,4 @@
-package hello;
+package application.domain;
 
 import java.util.Date;
 
@@ -12,11 +12,11 @@ import javax.persistence.TemporalType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UserInfo {
-	
+public class User {
+
 	// Log
-	private static final Logger LOG = LoggerFactory.getLogger(UserInfo.class);
-	
+	private static final Logger LOG = LoggerFactory.getLogger(User.class);
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -33,15 +33,14 @@ public class UserInfo {
 	private String numero_identificativo;
 	private String password;
 
-
-	public UserInfo(String nombre, String password) {
-		LOG.info("Creating user "+ nombre+ ". password: " + password);
-		this.nombre = nombre;
+	public User(String email, String password) {
+		LOG.info("Creating user " + nombre + ". password: " + password);
+		this.email = email;
 		this.password = password;
 	}
 
-	public UserInfo(Long id, String nombre, String apellidos, String email, Date fecha_nacimiento,
-			String direccion_postal, String nacionalidad, String numero_identificativo, String password) {
+	public User(Long id, String nombre, String apellidos, String email, Date fecha_nacimiento, String direccion_postal,
+			String nacionalidad, String numero_identificativo, String password) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -110,18 +109,17 @@ public class UserInfo {
 		this.numero_identificativo = numero_identificativo;
 	}
 
-	String _getContraseña() {
+	public String getContraseña() {
 		return password;
 	}
 
-	void _setContraseña(String contraseña) {
+	public void setContraseña(String contraseña) {
 		this.password = contraseña;
 	}
 
 	public Long getId() {
 		return id;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -139,7 +137,7 @@ public class UserInfo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserInfo other = (UserInfo) obj;
+		User other = (User) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -154,7 +152,5 @@ public class UserInfo {
 				+ fecha_nacimiento + ", direccion_postal=" + direccion_postal + ", nacionalidad=" + nacionalidad
 				+ ", numero_identificativo=" + numero_identificativo + "]";
 	}
-
-
 
 }

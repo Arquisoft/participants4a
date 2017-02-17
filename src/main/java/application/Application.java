@@ -1,4 +1,4 @@
-package asw.hello;
+package application;
 
 
 import org.springframework.boot.SpringApplication;
