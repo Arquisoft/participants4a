@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import application.domain.Request;
 import application.domain.User;
 import application.exception.BusinessException;
-import hello.Request;
-import services.Participant;
+import application.service.Participant;
+
 
 @RestController
 public class MainController {

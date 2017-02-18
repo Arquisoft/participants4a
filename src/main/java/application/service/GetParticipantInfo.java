@@ -1,9 +1,10 @@
 package application.service;
 
 import application.domain.Request;
+import application.domain.User;
 import application.exception.BusinessException;
 
 public interface GetParticipantInfo {
 
-	Request getParticipant(String email, String password) throws BusinessException;
+	User getParticipant(String email, String password) throws BusinessException;
 }

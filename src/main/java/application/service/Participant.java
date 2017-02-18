@@ -12,6 +12,10 @@ public class Participant implements GetParticipantInfo, ChangeInfo {
 		this.gbd = gestor;
 	}
 
+	public Participant() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void updateInfo(String email, String password, String newPassword) {
 		User user = this.gbd.findByEmailAndPassword(email, password);
@@ -20,13 +24,13 @@ public class Participant implements GetParticipantInfo, ChangeInfo {
 	}
 
 	@Override
-	public Request getParticipant(String email, String password) throws BusinessException {
+	public User getParticipant(String email, String password) throws BusinessException {
 
 		User user = this.gbd.findByEmailAndPassword(email, password);
 		if (user == null)
 			throw new BusinessException("No existe un usuario con dichas credenciales");
 		else
-			return new Request(user);
+			return user;
 	}
 
 }
