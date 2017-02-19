@@ -3,15 +3,19 @@ package application.domain;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Entity(name="User")
+@Table(name="USUARIOS")
 public class User {
 
 	// Log
@@ -23,7 +27,7 @@ public class User {
 	private String nombre;
 	private String apellidos;
 
-	@Column(name = "e-mail")
+//	@Column(name = "e-mail")
 	private String email;
 
 	@Temporal(TemporalType.DATE)
@@ -34,7 +38,7 @@ public class User {
 	private String password;
 
 	public User(String email, String password) {
-		LOG.info("Creating user " + nombre + ". password: " + password);
+		LOG.info("Creating user " + email + ". password: " + password);
 		this.email = email;
 		this.password = password;
 	}

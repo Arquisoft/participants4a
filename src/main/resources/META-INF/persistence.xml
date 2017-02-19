@@ -7,6 +7,8 @@
 	<persistence-unit name="participants">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+		<class>application.domain.User</class>
+		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
@@ -14,6 +16,8 @@
 			<property name="javax.persistence.jdbc.user" value="aswuser" />
 			<property name="javax.persistence.jdbc.password" value="temporal" />
 		</properties>
+		
+		
 	</persistence-unit>
 
 </persistence>
