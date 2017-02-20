@@ -23,7 +23,7 @@ public class Participant implements GetParticipantInfo {
 		EntityManager manager = ManagerHibernateJPA.getManager();
 		participants = manager.createNamedQuery("User.getParticipant", User.class).setParameter(1, email)
 				.setParameter(2, password).getResultList();
-		User user = (User) participants.get(0);
+		User user =  participants.get(0);
 
 		if (user == null)
 			throw new BusinessException("No existe un usuario con dichas credenciales");
