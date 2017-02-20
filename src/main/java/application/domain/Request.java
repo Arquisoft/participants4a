@@ -13,7 +13,6 @@ public class Request {
 	private String numero_identificativo;
 
 	public Request(User user) {
-		super();
 		this.nombre = user.getNombre();
 		this.apellidos = user.getApellidos();
 		this.email = user.getEmail();
@@ -22,6 +21,9 @@ public class Request {
 		this.fecha_nacimiento = user.getFecha_nacimiento();
 		this.nacionalidad = user.getNacionalidad();
 		this.numero_identificativo = user.getNumero_identificativo();
+	}
+
+	public Request() {
 	}
 
 	public String getNombre() {

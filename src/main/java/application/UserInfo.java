@@ -1,29 +1,21 @@
 package application;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity(name="UserInfo")
-@Table(name="USUARIOS")
 public class UserInfo {
-	// private static final Logger log =
-	// LoggerFactory.getLogger(UserInfo.class);
+	private static final Logger log =
+	LoggerFactory.getLogger(UserInfo.class);
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id; // JPA
-
 	private final String email;
 	private final String password;
 
 	@JsonCreator
 	public UserInfo(@JsonProperty("email") String email, @JsonProperty("password") String password) {
-		// log.info("Creating user " + name + ". age: " + password);
+		log.info("Creating user " + email + ". age: " + password);
 		this.email = email;
 		this.password = password;
 	}

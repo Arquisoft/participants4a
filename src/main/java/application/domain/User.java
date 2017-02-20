@@ -14,8 +14,8 @@ import javax.persistence.TemporalType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Entity(name="User")
-@Table(name="USUARIOS")
+@Entity(name = "User")
+@Table(name = "USUARIOS")
 public class User {
 
 	// Log
@@ -27,7 +27,7 @@ public class User {
 	private String nombre;
 	private String apellidos;
 
-//	@Column(name = "e-mail")
+	// @Column(name = "e-mail")
 	private String email;
 
 	@Temporal(TemporalType.DATE)
@@ -35,7 +35,12 @@ public class User {
 	private String direccion_postal;
 	private String nacionalidad;
 	private String numero_identificativo;
+
+	@Column(name = "contrasena")
 	private String password;
+
+	public User() {
+	}
 
 	public User(String email, String password) {
 		LOG.info("Creating user " + email + ". password: " + password);

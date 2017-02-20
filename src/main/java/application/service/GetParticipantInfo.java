@@ -1,6 +1,5 @@
 package application.service;
 
-import application.domain.Request;
 import application.domain.User;
 import application.exception.BusinessException;
 
