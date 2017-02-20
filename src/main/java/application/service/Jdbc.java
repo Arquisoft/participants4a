@@ -17,9 +17,9 @@ public class Jdbc {
 /* Configuration for Mysql
 */	
 	private static String DRIVER = "com.mysql.jdbc.Driver";
-	private static String URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11157627";
-	private static String USER = "sql11157627";
-	private static String PASS = "aGn41imG4w";
+	private static String URL = "jdbc:mysql://46.101.138.38:3306/asw";
+	private static String USER = "aswuser";
+	private static String PASS = "temporal";
 	
 	static {
 		try {
