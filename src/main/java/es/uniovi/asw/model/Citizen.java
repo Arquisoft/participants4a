@@ -9,6 +9,7 @@ import java.util.Date;
 /**
  * Clase del modelo Citizen
  */
+
 @Entity
 @Table(name="USUARIOS")
 public class Citizen {
@@ -21,7 +22,8 @@ public class Citizen {
 	private Date fecha_nacimiento;
 	private String direccion_postal;
 	private String nacionalidad;
-	private String numero_identificativo; // Clave natural
+	private String numero_identificativo;
+	// Clave natural
 	private String contrasena;
 	@Transient
 	private String contrasena_NC;

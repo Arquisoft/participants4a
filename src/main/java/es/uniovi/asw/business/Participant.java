@@ -1,6 +1,6 @@
 package es.uniovi.asw.business;
 
-import org.jboss.resource.adapter.jdbc.NullExceptionSorter;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Component;
 
 import es.uniovi.asw.dto.CitizenDTO;
@@ -15,7 +15,7 @@ public class Participant implements GetParticipantInfo {
 		Citizen citizen = null;
 		CitizenDTO citizenDTO = null;
 		try {
-			citizen = new DBManagement(email, contrasena).getPP();
+			citizen = new DBManagement(email, DigestUtils.sha512Hex(contrasena)).getPP();
 
 			if (citizen != null)
 				citizenDTO = new CitizenDTO(citizen.getNombre(), citizen.getApellidos(), citizen.getEmail(),

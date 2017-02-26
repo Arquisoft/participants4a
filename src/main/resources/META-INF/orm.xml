@@ -5,7 +5,7 @@
 	version="2.0">
 
 	<named-query name="Citizen.findByEmailPass">
-		<query>select c from Citizen c where c.email = ?1 and c.contrasena=?2</query>
+		<query>select c from Citizen c where c.email = ?1 and c.contrasena = ?2</query>
 	</named-query>
 
 </entity-mappings>

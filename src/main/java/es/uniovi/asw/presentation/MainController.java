@@ -2,6 +2,7 @@ package es.uniovi.asw.presentation;
 
 import java.util.ArrayList;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
