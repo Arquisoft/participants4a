@@ -28,4 +28,13 @@ public class CitizenFinder {
 		}
 		return null;
 	}
+
+	public static Citizen findByEmail(String email) {
+		List<Citizen> list = Hibernate_Jpa.getManager().createNamedQuery("Citizen.findByEmail",Citizen.class)
+				.setParameter(1, email).getResultList();
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+	}
 }

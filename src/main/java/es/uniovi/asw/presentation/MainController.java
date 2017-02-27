@@ -2,7 +2,7 @@ package es.uniovi.asw.presentation;
 
 import java.util.ArrayList;
 
-import org.apache.commons.codec.digest.DigestUtils;
+//import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +30,8 @@ public class MainController {
 		this.userInfo = new UserInfo(login.getEmail(), login.getContrasena());
 		ArrayList<Object> atributos = new ArrayList<Object>();
 		atributos.add(this.response);
+//		System.out.println("!!!!!!!!!!!!!!!!!!!!!MIRA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//		System.out.println(atributos);
 		model.addAttribute("atributes", atributos);
 		return "InfoPage";
 	}

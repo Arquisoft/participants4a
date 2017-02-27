@@ -3,6 +3,8 @@ package es.uniovi.asw.business;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import es.uniovi.asw.dbupdate.CitizenFinder;
 import es.uniovi.asw.dbupdate.util.Hibernate_Jpa;
 import es.uniovi.asw.model.Citizen;
@@ -23,8 +25,11 @@ public class DBManagement implements GetParticipant {
 		EntityTransaction trx = mapper.getTransaction();
 		trx.begin();
 		Citizen citizen = CitizenFinder.findByEmailPass(email, contrasena);
+//		Citizen citizen = CitizenFinder.findByEmail(email);
 		assertNotNull(citizen);
 		mapper.persist(citizen);
+//		System.out.println("Contraseña BD: "+ citizen.getContrasena());
+//		System.out.println("Contrtaseña introducida: " + DigestUtils.sha512Hex(contrasena));
 		trx.commit();
 		mapper.close();
 		return citizen;

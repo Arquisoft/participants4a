@@ -7,5 +7,8 @@
 	<named-query name="Citizen.findByEmailPass">
 		<query>select c from Citizen c where c.email = ?1 and c.contrasena = ?2</query>
 	</named-query>
-
+	
+	<named-query name="Citizen.findByEmail">
+		<query>select c from Citizen c where c.email = ?1 </query>
+	</named-query>
 </entity-mappings>
