@@ -28,4 +28,5 @@ public class Participant implements GetParticipantInfo {
 		}
 		return citizenDTO;
 	}
+	
 }
